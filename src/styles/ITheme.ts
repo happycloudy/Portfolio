@@ -11,5 +11,6 @@ export interface ITheme {
     },
     timings: {
         normal: string
-    }
+        long: string
+    },
 }

@@ -10,6 +10,7 @@ export const theme: ITheme = {
     },
     sizes: {},
     timings: {
-        normal: '0.3s'
+        normal: '0.3s',
+        long: '0.7s',
     }
 }
