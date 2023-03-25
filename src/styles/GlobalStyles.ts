@@ -11,6 +11,7 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({theme}) => theme.colors.black};
     border: none;
     outline: none;
+    box-sizing: border-box;
   }
   
   body {

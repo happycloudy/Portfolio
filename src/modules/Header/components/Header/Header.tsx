@@ -6,8 +6,8 @@ import HeaderLinks from "../HeaderLinks/HeaderLinks";
 export const Header = () => {
     return (
         <HeaderWrap>
-            <HeaderLinks/>
             <HeaderBackground/>
+            <HeaderLinks/>
         </HeaderWrap>
     );
 };
