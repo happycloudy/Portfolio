@@ -5,7 +5,7 @@ const animation = keyframes`
     transform: translate(-2vw, 0);
   }
   100% {
-    transform: translate(-8vw, 30vh);
+    transform: translate(-8vw, 39.814vh); 
     opacity: 1;
   }
 `

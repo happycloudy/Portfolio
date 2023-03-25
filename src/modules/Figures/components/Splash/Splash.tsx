@@ -10,10 +10,8 @@ const SplashWrap = styled.img`
   transform: translate(-1vw, -10vh) rotate(40.59deg);
 `
 
-const Splash = () => {
+export const Splash = () => {
     return (
         <SplashWrap src={SplashImage}/>
     );
 };
-
-export default Splash;

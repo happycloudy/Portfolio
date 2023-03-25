@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {NormalText} from "../../../../modules/Texts";
 
 const DescriptionStyled = styled.div`
-  width: 32vw;
+  width: 35vw;
 `
 
 interface IProps {

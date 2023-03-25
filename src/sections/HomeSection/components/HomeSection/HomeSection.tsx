@@ -3,11 +3,11 @@ import {HomeSectionWrap} from "../HomeSectionWrap/HomeSectionWrap";
 import BigCircle from "../BigCircle/BigCircle";
 import Text from "../Text/Text";
 import SmallCircle from "../SmallCircle/SmallCircle";
-import Splash from "../../../../modules/Figures/components/Splash/Splash";
+import {Splash} from "../../../../modules/Figures";
 
-const HomeSection = () => {
+export const HomeSection = () => {
     return (
-        <HomeSectionWrap>
+        <HomeSectionWrap id={'home'}>
             <BigCircle/>
             <SmallCircle/>
             <Splash/>
@@ -15,5 +15,3 @@ const HomeSection = () => {
         </HomeSectionWrap>
     );
 };
-
-export default HomeSection;

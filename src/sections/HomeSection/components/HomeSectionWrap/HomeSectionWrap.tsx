@@ -5,5 +5,5 @@ export const HomeSectionWrap = styled.section`
   flex-direction: column;
   height: 100vh;
   position: relative;
-  padding: 25.555vh 10.42vw 10.42vw;
+  padding: 32vh 10.42vw 10.42vw;
 `
