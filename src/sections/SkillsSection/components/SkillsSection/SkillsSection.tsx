@@ -1,9 +1,10 @@
 import React from 'react';
+import {SectionContainer} from "../../../../modules/Containers";
 
 export const SkillsSection = () => {
     return (
-        <div>
-
-        </div>
+        <SectionContainer>
+            123
+        </SectionContainer>
     );
 };
