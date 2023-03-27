@@ -11,6 +11,7 @@ interface IProps {
     size: 'small' | 'medium' | 'big'
     color: string
     animationDelay?: string
+    children?: JSX.Element | string
 }
 
 const floatingAnimation = keyframes`
@@ -38,24 +39,52 @@ const CircleWrap = styled.span<IWrapProps>`
 `
 
 
-export const Circle = ({size, color, animationDelay = '2s'}: IProps) => {
+export const Circle = ({size, color, children, animationDelay = '2s'}: IProps) => {
     let circleSize
     switch (size) {
         case "small":
             circleSize = 13.889
-            return <CircleWrap height={`${circleSize}vh`} width={`${circleSize}vh`} bg={color}
-                               animationDelay={animationDelay}/>
+            return (
+                <CircleWrap height={`${circleSize}vh`}
+                            width={`${circleSize}vh`}
+                            bg={color}
+                            animationDelay={animationDelay}
+                >
+                    {children}
+                </CircleWrap>
+            )
         case "medium":
             circleSize = 18.519
-            return <CircleWrap height={`${circleSize}vh`} width={`${circleSize}vh`} bg={color}
-                               animationDelay={animationDelay}/>
+            return (
+                <CircleWrap height={`${circleSize}vh`}
+                            width={`${circleSize}vh`}
+                            bg={color}
+                            animationDelay={animationDelay}
+                >
+                    {children}
+                </CircleWrap>
+            )
         case "big":
             circleSize = 46.296
-            return <CircleWrap height={`${circleSize}vh`} width={`${circleSize}vh`} bg={color}
-                               animationDelay={animationDelay}/>
+            return (
+                <CircleWrap height={`${circleSize}vh`}
+                            width={`${circleSize}vh`}
+                            bg={color}
+                            animationDelay={animationDelay}
+                >
+                    {children}
+                </CircleWrap>
+            )
         default:
             circleSize = 13.889
-            return <CircleWrap height={`${circleSize}vh`} width={`${circleSize}vh`} bg={color}
-                               animationDelay={animationDelay}/>
+            return (
+                <CircleWrap height={`${circleSize}vh`}
+                            width={`${circleSize}vh`}
+                            bg={color}
+                            animationDelay={animationDelay}
+                >
+                    {children}
+                </CircleWrap>
+            )
     }
 }
