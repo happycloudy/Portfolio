@@ -6,4 +6,5 @@ export const Title = styled.p`
   font-size: 40px;
   line-height: 60px;
   letter-spacing: 0.04em;
+  color: inherit;
 `
