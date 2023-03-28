@@ -1,10 +1,11 @@
-import styled, {keyframes} from "styled-components";
+import styled, {css, keyframes} from "styled-components";
 
 interface IWrapProps {
     height: string
     width: string
     bg: string
     animationDelay: string
+    noAnimation?: boolean
 }
 
 interface IProps {
@@ -12,6 +13,7 @@ interface IProps {
     color: string
     animationDelay?: string
     children?: JSX.Element | string
+    noAnimation?: boolean
 }
 
 const floatingAnimation = keyframes`
@@ -26,6 +28,11 @@ const floatingAnimation = keyframes`
   }
 `
 
+const animationCSS = css<Pick<IWrapProps, 'animationDelay'>>`
+  animation: ${floatingAnimation} 2s infinite ease-in-out;
+  animation-delay: ${props => props.animationDelay};
+`
+
 const CircleWrap = styled.span<IWrapProps>`
   border-radius: 100%;
   display: flex;
@@ -34,12 +41,11 @@ const CircleWrap = styled.span<IWrapProps>`
   height: ${props => props.height};
   width: ${props => props.width};
   background: ${props => props.bg};
-  animation: ${floatingAnimation} 2s infinite ease-in-out;
-  animation-delay: ${props => props.animationDelay};
+  ${props => !props.noAnimation && animationCSS}
 `
 
 
-export const Circle = ({size, color, children, animationDelay = '2s'}: IProps) => {
+export const Circle = ({size, color, children, noAnimation, animationDelay = '0'}: IProps) => {
     let circleSize
     switch (size) {
         case "small":
@@ -49,6 +55,7 @@ export const Circle = ({size, color, children, animationDelay = '2s'}: IProps) =
                             width={`${circleSize}vh`}
                             bg={color}
                             animationDelay={animationDelay}
+                            noAnimation={noAnimation}
                 >
                     {children}
                 </CircleWrap>
@@ -60,6 +67,7 @@ export const Circle = ({size, color, children, animationDelay = '2s'}: IProps) =
                             width={`${circleSize}vh`}
                             bg={color}
                             animationDelay={animationDelay}
+                            noAnimation={noAnimation}
                 >
                     {children}
                 </CircleWrap>
@@ -71,6 +79,7 @@ export const Circle = ({size, color, children, animationDelay = '2s'}: IProps) =
                             width={`${circleSize}vh`}
                             bg={color}
                             animationDelay={animationDelay}
+                            noAnimation={noAnimation}
                 >
                     {children}
                 </CircleWrap>
@@ -82,6 +91,7 @@ export const Circle = ({size, color, children, animationDelay = '2s'}: IProps) =
                             width={`${circleSize}vh`}
                             bg={color}
                             animationDelay={animationDelay}
+                            noAnimation={noAnimation}
                 >
                     {children}
                 </CircleWrap>
