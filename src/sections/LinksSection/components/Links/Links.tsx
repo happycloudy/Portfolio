@@ -9,10 +9,10 @@ import LinkedInIcon from "../../../../assets/linkedin.svg"
 const Links = () => {
     return (
         <LinksContainer>
-            <Link icon={VkIcon}/>
-            <Link icon={MainIcon}/>
-            <Link icon={TelegramIcon}/>
-            <Link icon={LinkedInIcon}/>
+            <Link icon={VkIcon} href={'https://vk.com/jonyoned'}/>
+            <Link icon={MainIcon} href={'mailto:arion.mikola@gmail.com'}/>
+            <Link icon={TelegramIcon} href={'https://t.me/happycloudy'}/>
+            <Link icon={LinkedInIcon} href={''}/>
         </LinksContainer>
     );
 };

@@ -2,20 +2,29 @@ import React from 'react';
 import {CategoriesContainer} from "../CategoriesContainer/CategoriesContainer";
 import {Button} from "../Button/Button";
 import {NormalText} from "../../../Texts";
+import {ICategory} from "../../types/skillsHeadingsType";
 
-const Categories = () => {
+interface IProps {
+    handleCategory: (category: string) => void
+    category: string
+    categories: ICategory[]
+}
+
+const Categories = ({handleCategory, category, categories}: IProps) => {
     return (
-        <CategoriesContainer>
-            <Button className={'active'}>
-                <NormalText bold>
-                    HTML & CSS
-                </NormalText>
-            </Button>
-            <Button>
-                <NormalText bold>
-                    Javascript
-                </NormalText>
-            </Button>
+        <CategoriesContainer className={categories.length < 2 ? 'hidden' : undefined}>
+            {
+                categories.map(categoriesItem => (
+                    <Button key={categoriesItem.name}
+                            className={category === categoriesItem.name ? 'active' : ''}
+                            onClick={() => handleCategory(categoriesItem.name)}
+                    >
+                        <NormalText bold>
+                            {categoriesItem.name}
+                        </NormalText>
+                    </Button>
+                ))
+            }
         </CategoriesContainer>
     );
 };

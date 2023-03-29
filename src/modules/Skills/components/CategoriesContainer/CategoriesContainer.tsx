@@ -5,4 +5,8 @@ export const CategoriesContainer = styled.div`
   justify-content: space-between;
   padding: 0 20vw;
   margin-top: 70px;
+  
+  &.hidden {
+    visibility: hidden;
+  }
 `

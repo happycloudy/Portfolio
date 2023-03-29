@@ -3,11 +3,17 @@ import {Circle} from "../../../../modules/Figures";
 
 interface IProps {
     icon: string
+    href: string
 }
 
-const Link = ({icon}: IProps) => {
+const Link = ({icon, href}: IProps) => {
     return (
-        <Circle size={'small'} color={'linear-gradient(180deg, #8E44AD -7%, #FFC0CB 58.76%)'} noAnimation>
+        <Circle size={'small'}
+                color={'linear-gradient(180deg, #8E44AD -7%, #FFC0CB 58.76%)'}
+                noAnimation
+                as={'a'}
+                href={href}
+        >
             <img src={icon} alt="link-icon"/>
         </Circle>
     );

@@ -1,4 +1,5 @@
 import styled, {css, keyframes} from "styled-components";
+import React from "react";
 
 interface IWrapProps {
     height: string
@@ -8,12 +9,14 @@ interface IWrapProps {
     noAnimation?: boolean
 }
 
-interface IProps {
+interface IProps{
     size: 'small' | 'medium' | 'big'
     color: string
     animationDelay?: string
     children?: JSX.Element | string
     noAnimation?: boolean
+    as?: string | React.ComponentType<any>
+    href?: string
 }
 
 const floatingAnimation = keyframes`
@@ -45,56 +48,32 @@ const CircleWrap = styled.span<IWrapProps>`
 `
 
 
-export const Circle = ({size, color, children, noAnimation, animationDelay = '0'}: IProps) => {
+export const Circle = ({size, color, children, noAnimation, animationDelay = '0', ...props}: IProps) => {
     let circleSize
     switch (size) {
         case "small":
             circleSize = 13.889
-            return (
-                <CircleWrap height={`${circleSize}vh`}
-                            width={`${circleSize}vh`}
-                            bg={color}
-                            animationDelay={animationDelay}
-                            noAnimation={noAnimation}
-                >
-                    {children}
-                </CircleWrap>
-            )
+            break
         case "medium":
             circleSize = 18.519
-            return (
-                <CircleWrap height={`${circleSize}vh`}
-                            width={`${circleSize}vh`}
-                            bg={color}
-                            animationDelay={animationDelay}
-                            noAnimation={noAnimation}
-                >
-                    {children}
-                </CircleWrap>
-            )
+            break
         case "big":
             circleSize = 46.296
-            return (
-                <CircleWrap height={`${circleSize}vh`}
-                            width={`${circleSize}vh`}
-                            bg={color}
-                            animationDelay={animationDelay}
-                            noAnimation={noAnimation}
-                >
-                    {children}
-                </CircleWrap>
-            )
+            break
         default:
             circleSize = 13.889
-            return (
-                <CircleWrap height={`${circleSize}vh`}
-                            width={`${circleSize}vh`}
-                            bg={color}
-                            animationDelay={animationDelay}
-                            noAnimation={noAnimation}
-                >
-                    {children}
-                </CircleWrap>
-            )
+            break
     }
+
+    return (
+        <CircleWrap height={`${circleSize}vh`}
+                    width={`${circleSize}vh`}
+                    bg={color}
+                    animationDelay={animationDelay}
+                    noAnimation={noAnimation}
+                    {...props}
+        >
+            {children}
+        </CircleWrap>
+    )
 }
