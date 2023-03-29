@@ -7,16 +7,18 @@ interface IWrapProps {
     bg: string
     animationDelay: string
     noAnimation?: boolean
+    hover?: boolean
 }
 
 interface IProps{
     size: 'small' | 'medium' | 'big'
-    color: string
+    bg: string
     animationDelay?: string
     children?: JSX.Element | string
     noAnimation?: boolean
     as?: string | React.ComponentType<any>
     href?: string
+    hover?: boolean
 }
 
 const floatingAnimation = keyframes`
@@ -44,11 +46,16 @@ const CircleWrap = styled.span<IWrapProps>`
   height: ${props => props.height};
   width: ${props => props.width};
   background: ${props => props.bg};
+  transition: ${({theme}) => theme.timings.normal};
   ${props => !props.noAnimation && animationCSS}
+  
+  &:hover {
+    transform: scale(1.1, 1.1);
+  }
 `
 
 
-export const Circle = ({size, color, children, noAnimation, animationDelay = '0', ...props}: IProps) => {
+export const Circle = ({size, children, animationDelay = '0', ...props}: IProps) => {
     let circleSize
     switch (size) {
         case "small":
@@ -68,9 +75,7 @@ export const Circle = ({size, color, children, noAnimation, animationDelay = '0'
     return (
         <CircleWrap height={`${circleSize}vh`}
                     width={`${circleSize}vh`}
-                    bg={color}
                     animationDelay={animationDelay}
-                    noAnimation={noAnimation}
                     {...props}
         >
             {children}

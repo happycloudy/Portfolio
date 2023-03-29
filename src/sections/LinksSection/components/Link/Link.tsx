@@ -9,9 +9,10 @@ interface IProps {
 const Link = ({icon, href}: IProps) => {
     return (
         <Circle size={'small'}
-                color={'linear-gradient(180deg, #8E44AD -7%, #FFC0CB 58.76%)'}
+                bg={'linear-gradient(180deg, #8E44AD -7%, #FFC0CB 58.76%)'}
                 noAnimation
                 as={'a'}
+                hover
                 href={href}
         >
             <img src={icon} alt="link-icon"/>
