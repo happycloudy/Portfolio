@@ -5,13 +5,13 @@ import HeaderLink from "../HeaderLink/HeaderLink";
 const HeaderLinks = () => {
     return (
         <HeaderLinksWrap>
-            <HeaderLink>
+            <HeaderLink link={'#home'}>
                 Главная
             </HeaderLink>
-            <HeaderLink>
+            <HeaderLink link={'#skills'}>
                 Навыки
             </HeaderLink>
-            <HeaderLink>
+            <HeaderLink link={'#links'}>
                 Свяжись со мной
             </HeaderLink>
         </HeaderLinksWrap>

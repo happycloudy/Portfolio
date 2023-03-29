@@ -9,7 +9,7 @@ import {NormalText} from "../../../../modules/Texts";
 
 export const LinksSection = () => {
     return (
-        <SectionContainer>
+        <SectionContainer id={'links'}>
             <LinksSectionWrap>
                 <BottomCircle/>
                 <Links/>

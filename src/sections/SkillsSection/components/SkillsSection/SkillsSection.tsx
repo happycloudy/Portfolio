@@ -26,7 +26,7 @@ export const SkillsSection = () => {
     const handleSkillsType = (type: SkillsHeadingsType) => setSkillsType(type)
 
     return (
-        <SectionContainer>
+        <SectionContainer id={'skills'}>
             <SkillsSectionWrap>
                 <Skills type={skillsType} categories={categories} initialCategory={categories[0].name}/>
                 <Button action={handleSkillsType} skillType={nextSkillType}/>

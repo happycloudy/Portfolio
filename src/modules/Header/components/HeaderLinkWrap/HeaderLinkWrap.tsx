@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const HeaderLinkWrap = styled.button`
+export const HeaderLinkWrap = styled.a`
   padding: 10px 20px;
   font-style: normal;
   font-weight: 400;
@@ -11,6 +11,7 @@ export const HeaderLinkWrap = styled.button`
   transition: ${({theme}) => theme.timings.normal};
   color: ${({theme}) => theme.colors.black};
   cursor: pointer;
+  text-decoration: none;
 
   &:hover {
     border-radius: 10px;

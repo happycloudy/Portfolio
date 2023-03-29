@@ -3,11 +3,12 @@ import {HeaderLinkWrap} from "../HeaderLinkWrap/HeaderLinkWrap";
 
 interface IProps {
     children: string
+    link: string
 }
 
-const HeaderLink = ({children}: IProps) => {
+const HeaderLink = ({children, link}: IProps) => {
     return (
-        <HeaderLinkWrap>
+        <HeaderLinkWrap href={link}>
             {children}
         </HeaderLinkWrap>
     );
