@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {SkillItem} from "../SkillItem/SkillItem";
 import {SkillsListWrap} from "../SkillsListWrap/SkillsListWrap";
 import {NormalText} from "../../../Texts";

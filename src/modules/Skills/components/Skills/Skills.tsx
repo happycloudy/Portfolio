@@ -33,14 +33,14 @@ export const Skills = ({type, categories, initialCategory}: IProps) => {
     }, [type, category])
 
     return (
-        <SkillsWrap className={type === 'BACKEND' ? 'right': undefined}>
+        <SkillsWrap className={type === 'BACKEND' ? 'right': 'left'}>
             <TitleWrap>
                 <Title>
                     Навыки в {type}
                 </Title>
             </TitleWrap>
             <Categories categories={categories} category={category} handleCategory={handleCategory}/>
-            <SkillsList skills={categoryItem!.list} currentPage={currentPage} itemsPerPage={itemsPerPage}/>
+                <SkillsList skills={categoryItem!.list} currentPage={currentPage} itemsPerPage={itemsPerPage}/>
             <Selector pages={pages} setPage={setCurrentPage} page={currentPage}/>
         </SkillsWrap>
     );

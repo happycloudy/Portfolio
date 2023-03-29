@@ -1,14 +1,23 @@
 import styled from "styled-components";
 
 export const SelectorItem = styled.button`
-      padding: 10px;
+  padding: 10px;
   border-radius: 100%;
-  
-  &:hover {
-    outline: 1px solid ${({theme}) => theme.colors.black};
+  position: relative;
+
+  &:not(.active):hover::before {
+    background: ${({theme}) => theme.colors.cyan};
+    content: '';
+    position: absolute;
+    height: calc(100% + 4px);
+    width: calc(100% + 4px);
+    left: -2px;
+    top: -2px;
+    border-radius: 100%;
+    z-index: -1;
   }
-  
+
   &.active {
-    outline: 3px solid ${({theme}) => theme.colors.gray};
+    background: ${({theme}) => theme.colors.cyan};
   }
 `
