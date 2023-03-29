@@ -16,5 +16,4 @@ export const SectionContainer = styled.section<IProps>`
   padding-bottom: ${props => props.pb};
   padding-left: ${props => props.pl};
   padding-right: ${props => props.pr};
-  border-bottom: 1px solid #000;
 `

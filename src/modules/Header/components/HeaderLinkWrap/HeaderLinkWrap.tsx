@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const HeaderLinkWrap = styled.a`
+export const HeaderLinkWrap = styled.span`
   padding: 10px 20px;
   font-style: normal;
   font-weight: 400;
@@ -13,7 +13,7 @@ export const HeaderLinkWrap = styled.a`
   cursor: pointer;
   text-decoration: none;
 
-  &:hover {
+  &:hover, .active > & {
     border-radius: 10px;
     color: ${({theme}) => theme.colors.cyan};
     background: ${({theme}) => theme.colors.gray};

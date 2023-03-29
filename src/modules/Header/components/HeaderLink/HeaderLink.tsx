@@ -1,5 +1,6 @@
 import React from 'react';
 import {HeaderLinkWrap} from "../HeaderLinkWrap/HeaderLinkWrap";
+import {Link} from "react-scroll";
 
 interface IProps {
     children: string
@@ -8,9 +9,15 @@ interface IProps {
 
 const HeaderLink = ({children, link}: IProps) => {
     return (
-        <HeaderLinkWrap href={link}>
-            {children}
-        </HeaderLinkWrap>
+        <Link to={link}
+              activeClass="active"
+              spy={true}
+              smooth={true}
+              duration={500}>
+            <HeaderLinkWrap>
+                {children}
+            </HeaderLinkWrap>
+        </Link>
     );
 };
 
