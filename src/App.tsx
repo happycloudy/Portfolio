@@ -1,27 +1,70 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import {Header} from "./modules/Header";
-import {HomeSection} from "./sections/HomeSection";
-import {SkillsSection} from "./sections/SkillsSection";
-import {LinksSection} from "./sections/LinksSection";
+import {sections} from "./constants/sections";
+import {scroller} from "react-scroll";
+import {store} from "./constants/store";
+
+const threshold = 10
 
 function App() {
-    const [width, setWidth] = useState(0)
+    const handleScroll = (event: WheelEvent) => {
+        if (store.scrolled > threshold) {
+            const sectionIndex = sections.reduce(
+                (prev, curr, id) => curr.id === store.sectionId ? id : prev,
+                -1
+            )
+
+            if (sectionIndex + 1 < sections.length) {
+                store.sectionId = sections[sectionIndex + 1].id
+                store.scrolled = 0
+                scroller.scrollTo(store.sectionId, {
+                    duration: 500,
+                    smooth: true,
+                })
+            } else {
+                store.scrolled = 0
+            }
+        } else if(store.scrolled < -threshold) {
+            const sectionIndex = sections.reduce(
+                (prev, curr, id) => curr.id === store.sectionId ? id : prev,
+                -1
+            )
+            if (sectionIndex - 1 >= 0) {
+                store.sectionId = sections[sectionIndex - 1].id
+                store.scrolled = 0
+                scroller.scrollTo(store.sectionId, {
+                    duration: 500,
+                    smooth: true,
+                })
+            } else {
+                store.scrolled = 0
+            }
+        }
+
+
+
+        if (event.deltaY > 0) {
+            if (store.scrolled < 0) {
+                store.scrolled = 0
+            }
+            store.scrolled += 1
+        } else if (event.deltaY < 0) {
+            if (store.scrolled > 0) {
+                store.scrolled = 0
+            }
+            store.scrolled -= 1
+        }
+    }
 
     useEffect(() => {
-        setWidth(window.innerWidth)
+        document.addEventListener('wheel', handleScroll)
     }, [])
 
     return (
-        width > 1000 ?
-            <main>
-                <Header/>
-                <HomeSection/>
-                <SkillsSection/>
-                <LinksSection/>
-            </main> :
-            <div>
-                Используйте компьютер для просмотра этого сайта =)
-            </div>
+        <main>
+            <Header/>
+            {sections.map(Section => <Section.section key={Section.id}/>)}
+        </main>
     )
 }
 
