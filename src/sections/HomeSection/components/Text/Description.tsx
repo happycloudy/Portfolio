@@ -2,7 +2,9 @@ import styled from "styled-components";
 import {NormalText} from "../../../../modules/Texts";
 
 const DescriptionStyled = styled.div`
-  width: 35vw;
+  @media (min-width: ${({theme}) => theme.breakpoints.desktop}) {
+    width: 45vw;
+  }
 `
 
 interface IProps {

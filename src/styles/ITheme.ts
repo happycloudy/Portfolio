@@ -6,8 +6,10 @@ export interface ITheme {
         purple: string
         gray: string
     },
-    sizes: {
-
+    breakpoints: {
+        phone: string
+        tablet: string
+        desktop: string
     },
     timings: {
         normal: string

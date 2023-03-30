@@ -47,6 +47,8 @@ const CircleWrap = styled.span<IWrapProps>`
   width: ${props => props.width};
   background: ${props => props.bg};
   transition: ${({theme}) => theme.timings.normal};
+  max-width: 100vw;
+  max-height: 100vw;
   ${props => !props.noAnimation && animationCSS}
   
   &:hover {
