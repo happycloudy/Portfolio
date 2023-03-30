@@ -7,6 +7,7 @@ import SkillsList from "../SkillsList/SkillsList";
 import {ICategory, SkillsHeadingsType} from "../../types/skillsHeadingsType";
 import Selector from "../Selector/Selector";
 
+
 interface IProps {
     type: SkillsHeadingsType
     categories: ICategory[]
@@ -32,15 +33,18 @@ export const Skills = ({type, categories, initialCategory}: IProps) => {
         setCurrentPage(0)
     }, [type, category])
 
+
+
+
     return (
-        <SkillsWrap className={type === 'BACKEND' ? 'right': 'left'}>
+        <SkillsWrap className={type === 'BACKEND' ? 'right' : 'left'}>
             <TitleWrap>
                 <Title>
                     Навыки в {type}
                 </Title>
             </TitleWrap>
             <Categories categories={categories} category={category} handleCategory={handleCategory}/>
-                <SkillsList skills={categoryItem!.list} currentPage={currentPage} itemsPerPage={itemsPerPage}/>
+            <SkillsList skills={categoryItem!.list} currentPage={currentPage} itemsPerPage={itemsPerPage}/>
             <Selector pages={pages} setPage={setCurrentPage} page={currentPage}/>
         </SkillsWrap>
     );

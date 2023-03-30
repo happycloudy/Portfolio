@@ -4,6 +4,7 @@ export const SkillItem = styled.span`
   padding: 35px 40px;
   color: #fff;
   border-radius: 30px;
+  user-select: none;
   
   &:nth-child(even) {
     background: ${({theme}) => theme.colors.purple};

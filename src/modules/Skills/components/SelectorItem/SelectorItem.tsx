@@ -4,6 +4,11 @@ export const SelectorItem = styled.button`
   padding: 10px;
   border-radius: 100%;
   position: relative;
+  
+
+  &:not(.active):hover {
+    cursor: pointer;  
+  }
 
   &:not(.active):hover::before {
     background: ${({theme}) => theme.colors.cyan};
@@ -15,6 +20,7 @@ export const SelectorItem = styled.button`
     top: -2px;
     border-radius: 100%;
     z-index: -1;
+
   }
 
   &.active {

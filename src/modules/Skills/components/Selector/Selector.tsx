@@ -1,6 +1,7 @@
 import React from 'react';
 import {SelectorContainer} from "../SelectorContainer/SelectorContainer";
 import {SelectorItem} from "../SelectorItem/SelectorItem";
+import {Arrow} from "../../../Figures";
 
 interface IProps {
     pages: number
@@ -13,6 +14,7 @@ const Selector = ({pages, setPage, page}: IProps) => {
 
     return (
         <SelectorContainer>
+            <Arrow onClick={() => setPage(page > 0 ? page - 1: page + 1)} left/>
             {
                 pagesArray.map((_, index) => (
                     <SelectorItem key={index}
@@ -21,6 +23,7 @@ const Selector = ({pages, setPage, page}: IProps) => {
                     />
                 ))
             }
+            <Arrow onClick={() => setPage(page + 1 < pages ? page + 1: 0)}/>
         </SelectorContainer>
     );
 };
