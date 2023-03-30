@@ -26,19 +26,35 @@ const animatedRightReveal = keyframes`
 
 export const SkillsWrap = styled.div`
   height: 100%;
-  width: 80vw;
-  padding-top: 7vh;
+  width: 100vw;
+  padding-top: 10px;
   transition-delay: 0.5s;
   
   &.right {
-    margin-left: 20vw;
     opacity: 0;
     animation: ${animatedRightReveal} ${({theme}) => theme.timings.normal} forwards 0.5s;
+
+    @media (min-width: ${({theme}) => theme.breakpoints.tablet}) {
+      margin-left: 20vw;
+    }
   }
   
   &.left {
-    margin-left: 0;
     opacity: 0;
     animation: ${animatedLeftReveal} ${({theme}) => theme.timings.normal} forwards 0.5s;
+    
+    @media (min-width: ${({theme}) => theme.breakpoints.tablet}) {
+      margin-left: 0;
+    }
+  }
+
+  @media (min-width: ${({theme}) => theme.breakpoints.tablet}) {
+    padding-top: 130px;
+    width: 80vw;
+  }
+  
+  @media (min-width: ${({theme}) => theme.breakpoints.desktop}) {
+    padding-top: 100px;
+    width: 80vw;
   }
 `

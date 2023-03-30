@@ -34,8 +34,6 @@ export const Skills = ({type, categories, initialCategory}: IProps) => {
     }, [type, category])
 
 
-
-
     return (
         <SkillsWrap className={type === 'BACKEND' ? 'right' : 'left'}>
             <TitleWrap>

@@ -4,7 +4,7 @@ const borderWidth = 3
 
 
 export const Button = styled.button`
-  padding: 28px 35px;
+  padding: 10px 20px;
   border-radius: 30px;
   background: #fff;
   position: relative;
@@ -36,5 +36,9 @@ export const Button = styled.button`
   &.active {
     background: linear-gradient(63.11deg, #8E44AD 0%, #FFC0CB 61.46%);
     color: #fff;
+  }
+
+  @media (min-width: ${({theme}) => theme.breakpoints.tablet}) {
+    padding: 28px 35px;
   }
 `

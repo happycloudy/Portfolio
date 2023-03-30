@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const SkillItem = styled.span`
-  padding: 35px 40px;
+  padding: 20px 25px;
   color: #fff;
   border-radius: 30px;
   user-select: none;
@@ -12,5 +12,9 @@ export const SkillItem = styled.span`
 
   &:nth-child(odd) {
     background: ${({theme}) => theme.colors.cyan};
+  }
+
+  @media (min-width: ${({theme}) => theme.breakpoints.desktop}) {
+    padding: 35px 40px;
   }
 `

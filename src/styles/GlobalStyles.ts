@@ -14,10 +14,6 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
   
-  body {
-    overflow: hidden;
-  }
-  
   ul, ol {
     list-style: none;
   }
