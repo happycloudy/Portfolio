@@ -11,7 +11,7 @@ const animation = keyframes`
 `
 
 export const HeaderWrap = styled.header`
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   margin: 0 200px;
@@ -24,4 +24,8 @@ export const HeaderWrap = styled.header`
   width: calc(100% - 400px);
   opacity: 0;
   animation: ${animation} 0.7s ease-out 1s forwards;
+
+  @media (min-width: ${({theme}) => theme.breakpoints.tablet}) {
+    display: flex;
+  }
 `
