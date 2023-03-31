@@ -37,7 +37,7 @@ export const ButtonWrap = styled.button`
   position: relative;
   width: 100vw;
   max-height: 50%;
-  min-height: 30vh;
+  min-height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
