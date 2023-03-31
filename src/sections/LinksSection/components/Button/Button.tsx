@@ -6,6 +6,7 @@ export const Button = styled.button`
   background: ${({theme}) => theme.colors.pink};
   cursor: pointer;
   position: relative;
+  text-decoration: none;
   
   &::before {
     content: '';

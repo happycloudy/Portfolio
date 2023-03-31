@@ -14,11 +14,11 @@ export const LinksSection = () => {
                 <BottomCircle/>
                 <Links/>
                 <ButtonContainer>
-                    <Button>
-                        <NormalText small bold>
+                    <NormalText small bold>
+                        <Button as={'a'} href={'/resume.pdf'}>
                             Скачать резюме
-                        </NormalText>
-                    </Button>
+                        </Button>
+                    </NormalText>
                 </ButtonContainer>
             </LinksSectionWrap>
         </SectionContainer>
