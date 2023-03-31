@@ -10,7 +10,7 @@ const SplashWrap = styled.img`
   top: 0;
   transform: translate(-1vw, -10vh) rotate(40.59deg);
   
-  @media (min-width: ${({theme}) => theme.breakpoints.tablet}) {
+  @media (min-width: ${({theme}) => theme.breakpoints.desktop}) {
     display: block;
   }
 `

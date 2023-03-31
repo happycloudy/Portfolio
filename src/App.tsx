@@ -57,7 +57,7 @@ function App() {
     }
 
     useEffect(() => {
-        if(window.innerWidth > 767) {
+        if(window.innerWidth > 1023) {
             document.body.style.overflow = 'hidden'
             document.addEventListener('wheel', handleScroll)
         }

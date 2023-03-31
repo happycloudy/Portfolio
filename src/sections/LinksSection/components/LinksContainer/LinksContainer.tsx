@@ -5,4 +5,9 @@ export const LinksContainer = styled.div`
   gap: 50px;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+
+  @media (min-width: ${({theme}) => theme.breakpoints.tablet}) {
+    flex-direction: row;
+  }
 `
