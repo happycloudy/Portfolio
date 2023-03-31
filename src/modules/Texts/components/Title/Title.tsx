@@ -1,8 +1,12 @@
 import styled from "styled-components";
 
-export const Title = styled.p`
+interface IProps {
+    tall?: boolean
+}
+
+export const Title = styled.p<IProps>`
   font-style: normal;
-  font-weight: 600;
+  font-weight: ${props => props.tall ? 400 : 600};
   font-size: clamp(0.625rem, 720.625rem + -1500vw, 1.5625rem);
   line-height: clamp(0.625rem, 720.625rem + -1500vw, 1.5625rem);
   letter-spacing: 0.04em;

@@ -1,5 +1,5 @@
 import React, {useEffect, useMemo, useState} from 'react';
-import {Title} from "../../../Texts";
+import {CustomText, Title} from "../../../Texts";
 import {TitleWrap} from "../TitleWrap/TitleWrap";
 import {SkillsWrap} from "../SkillsWrap/SkillsWrap";
 import Categories from "../Categories/Categories";
@@ -44,8 +44,8 @@ export const Skills = ({type, categories, initialCategory}: IProps) => {
     return (
         <SkillsWrap className={type === 'BACKEND' ? 'right' : 'left'}>
             <TitleWrap>
-                <Title>
-                    Навыки в {type}
+                <Title tall>
+                    Навыки в <CustomText color={' '} weight={600}>{type}</CustomText>
                 </Title>
             </TitleWrap>
             <Categories categories={categories} category={category} handleCategory={handleCategory}/>
