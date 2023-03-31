@@ -16,8 +16,12 @@ export const SectionContainer = styled.section<IProps>`
   padding-bottom: ${props => props.pb};
   padding-left: ${props => props.pl};
   padding-right: ${props => props.pr};
-  overflow-x: hidden;
 
+
+  &:first-child {
+    overflow-x: hidden;
+  }
+  
   &:last-child {
     height: 102vh;
   }

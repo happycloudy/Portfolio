@@ -6,6 +6,7 @@ import Categories from "../Categories/Categories";
 import SkillsList from "../SkillsList/SkillsList";
 import {ICategory, SkillsHeadingsType} from "../../types/skillsHeadingsType";
 import Selector from "../Selector/Selector";
+import {ITEMS_PER_PAGE_DESKTOP, ITEMS_PER_PAGE_PHONE} from "../../constants/SkillsItemsAmount";
 
 
 interface IProps {
@@ -14,11 +15,12 @@ interface IProps {
     initialCategory: string
 }
 
-const itemsPerPage = 5
+
 
 export const Skills = ({type, categories, initialCategory}: IProps) => {
     const [category, setCategory] = useState<string>(initialCategory)
     const [currentPage, setCurrentPage] = useState<number>(0)
+    const [itemsPerPage, setItemsPerPage] = useState(ITEMS_PER_PAGE_DESKTOP)
 
     const categoryItem = useMemo(() => categories.find(item => item.name === category), [category])
     const pages = useMemo(() => Math.ceil(categoryItem!.list.length / itemsPerPage), [categoryItem])
@@ -33,6 +35,11 @@ export const Skills = ({type, categories, initialCategory}: IProps) => {
         setCurrentPage(0)
     }, [type, category])
 
+    useEffect(() => {
+        if(window.innerWidth < 768) {
+            setItemsPerPage(ITEMS_PER_PAGE_PHONE)
+        }
+    }, [])
 
     return (
         <SkillsWrap className={type === 'BACKEND' ? 'right' : 'left'}>

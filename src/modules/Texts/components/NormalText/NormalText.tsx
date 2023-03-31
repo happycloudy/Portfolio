@@ -9,7 +9,10 @@ interface IProps {
 export const NormalText = styled.p<IProps>`
   font-style: normal;
   font-weight: ${props => props.bold ? 800 : 400};
-  font-size: ${props => props.small ? '20px' : '24px'};
+  font-size: ${props => props.small ?
+          'clamp(0.9375rem, 0.7138rem + 1.1186vw, 1.25rem)' :
+          'font-size: clamp(1.0625rem, 0.7493rem + 1.566vw, 1.5rem)'
+  };
   line-height: 36px;
   letter-spacing: ${props => props.noSpacing ? 0 : '0.1em'};
   color: inherit;

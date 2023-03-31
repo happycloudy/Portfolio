@@ -31,7 +31,8 @@ export const SkillsListWrap = styled.div`
   flex-wrap: wrap;
   gap: 20px;
   margin-top: 50px;
-  height: 50%;
+  min-height: 300px;
+  padding: 0 10px;
     
   @media (min-width: ${({theme}) => theme.breakpoints.tablet}) {
     gap: 35px;
@@ -39,7 +40,8 @@ export const SkillsListWrap = styled.div`
 
   @media (min-width: ${({theme}) => theme.breakpoints.desktop}) {
     padding: 0 154px;
-    margin-top: 150px;
+    margin-top: 100px;
+    height: 30%;
   }
   
   &.animationLeft {
