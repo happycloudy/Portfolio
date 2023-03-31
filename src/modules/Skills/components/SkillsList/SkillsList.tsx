@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 import {SkillItem} from "../SkillItem/SkillItem";
 import {SkillsListWrap} from "../SkillsListWrap/SkillsListWrap";
 import {NormalText} from "../../../Texts";
+import classNames from "classnames";
 
 interface IProps {
     currentPage: number
@@ -10,8 +11,18 @@ interface IProps {
 }
 
 const SkillsList = ({currentPage, skills, itemsPerPage}: IProps) => {
+    const [prevPage, setPrevPage] = useState(currentPage)
+    const classes = useMemo(() => ({
+        animationLeft: prevPage - currentPage > 0,
+        animationRight: prevPage - currentPage < 0,
+    }), [currentPage])
+
+    useEffect(() => {
+        setPrevPage(currentPage)
+    }, [currentPage])
+
     return (
-        <SkillsListWrap>
+        <SkillsListWrap className={classNames(classes)}>
             {
                 skills.slice(
                     currentPage === 0 ? currentPage : currentPage * itemsPerPage,
