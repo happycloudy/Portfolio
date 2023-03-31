@@ -6,8 +6,18 @@ export const LinksContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  
+  & img {
+    width: 32px;
+    height: auto;
+  }
 
   @media (min-width: ${({theme}) => theme.breakpoints.tablet}) {
+    & img {
+      width: auto;
+      height: auto;
+    }
+    
     flex-direction: row;
   }
 `
