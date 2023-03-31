@@ -31,7 +31,8 @@ export const SkillsListWrap = styled.div`
   flex-wrap: wrap;
   gap: 20px;
   margin-top: 50px;
-
+  height: 50%;
+    
   @media (min-width: ${({theme}) => theme.breakpoints.tablet}) {
     gap: 35px;
   }
