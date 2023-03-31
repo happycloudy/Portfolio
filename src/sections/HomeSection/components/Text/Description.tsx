@@ -8,7 +8,7 @@ const DescriptionStyled = styled.div`
 `
 
 interface IProps {
-    children: JSX.Element | string
+    children: any
 }
 
 const Description = ({children}: IProps) => {

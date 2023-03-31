@@ -7,7 +7,7 @@ export const GlobalStyles = createGlobalStyle`
   *, *::before, *::after {
     padding: 0;
     margin: 0;
-    font-family: 'Monserrat';
+    font-family: 'Poppins','Monserrat';
     color: ${({theme}) => theme.colors.black};
     border: none;
     outline: none;

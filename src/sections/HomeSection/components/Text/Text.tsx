@@ -13,8 +13,8 @@ const Text = () => {
                 Я <ColoredText>frontend-разработчик</ColoredText>
             </Title>
             <Description>
-                Меня зовут Арион и я занимаюсь разработкой интерфейсов на React. Использую
-                Typescript, Redux. Проектирую интерфейсы любой сложности и сейчас
+                Меня зовут Арион и я занимаюсь разработкой интерфейсов на <ColoredText>React</ColoredText>.
+                Использую <ColoredText>Typescript, Redux</ColoredText>. Проектирую интерфейсы любой сложности и сейчас
                 развиваюсь в архитектуре веб приложений
             </Description>
         </TextWrap>
