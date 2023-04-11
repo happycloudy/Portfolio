@@ -1,12 +1,15 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
-  padding: 25px;
+  padding: 10px 20px;
   border-radius: 20px;
   background: ${({theme}) => theme.colors.pink};
   cursor: pointer;
   position: relative;
   text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   
   &::before {
     content: '';
@@ -23,5 +26,10 @@ export const Button = styled.button`
   
   &:hover::before {
     background: ${({theme}) => theme.colors.purple};
+  }
+
+
+  @media (min-width: ${({theme}) => theme.breakpoints.tablet}) {
+    padding: 25px;
   }
 `
